@@ -1,0 +1,39 @@
+Docker --version 도커 버전확인
+Docker version 도커 클라이언트와 서버 버전 확인
+Docker run hello-world  hello-world라는 이미지 기반으로 컨테이너를 실행시킨다. Hello-world라는 이미지가 존재하지 않을 경우에는 스스로 다운을 받아준다. 
+Docker ps (-a) 컨테이너 id/이미지/커맨드/만든시간/상태/이름등 의 정보를 보여준다. 
+(-a) 실행중인 컨테이너 만나오는 것 -a 모든 컨테이너 정보가 나온다. 
+Docker-machine.exe ls 머신 정보에 대한 설명이 나온다.  머신의 목록
+Docker container run <docker-image-name><commend> 이미지 기반으로 컨테이너 실행
+Docker system df  컨테이너가 사용하고 있는 디스크 사용량
+Docker image ls 현재 image의 목록을 보여준다
+Docker container run –name webserver -d -p 8080:80 nginx
+	Webserver는 컨테이너의 이름이 된다.
+	-d가 의미하는 것은 백그라운드로 실행시키겠다는 의미다. 
+	-p는 포트를 의미한다 80포트를 내 pc의 8080포트에 연결하겠다. 
+
+Docker container ls (-a) : 실행중인 컨테이너 목록보기 (전체 컨테이너 목록보기)
+	=docker ps (-a)
+Docker container rm <container ID> : 컨테이너 삭제 (실행중인 컨테이너는 안됨)
+Docker container prune : 중지된 모든 컨테이너 제거 
+	--filter 옵션을 사용해서 특정 조건에 따라 컨테이너를 삭제할 수 있다. 
+	Ex)Docker container prune –filter “until=12h” 12시간 이전에 생성된 모든 컨테이너를 제거
+
+Docker image ls :이미지 목록 
+	= Docker images 
+Docker image rm <image ID>: 이미지 제거 
+
+Docker search <name> : image 검색 
+
+Docker container run -it –name “test1” centos /bin/cal
+	-it : i는 input을 의미해서 표준화된 input 대화식으로 하겠다
+	Centos image기반의 Container를 실행하는데 이름은 test1이고, /bin/cal명령어를 사용 
+
+Docker container run -it –name ubuntush ubuntu /bin/bash
+
+Ctrl+p -> q : detach 컨테이너를 띄운 상태에서 빠져나오는 것 
+Attach -> 다시 컨테이너로 들어가는 것
+Exit (= ctrl+D) : 컨테이너를 스톱하고 나오는 것 
+Stop : 컨테이너를 완전 죽이는 것 
+
+
