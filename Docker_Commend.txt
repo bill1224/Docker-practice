@@ -35,5 +35,29 @@ Ctrl+p -> q : detach 컨테이너를 띄운 상태에서 빠져나오는 것
 Attach -> 다시 컨테이너로 들어가는 것
 Exit (= ctrl+D) : 컨테이너를 스톱하고 나오는 것 
 Stop : 컨테이너를 완전 죽이는 것 
+Exit : 완전히 컨테이너를 나가는 것
+Docker container [stop | start] <container name(id)>
+Docker container exec -it <container> cat /etc/hosts
+	Exec : 현재 실핼중인 컨테이너에서 명령어를 실행시키고자 할 때
+	Run: 현재 컨테이너가 실행중이지 않을 경우에 명령어를 실행시키고자 할 때
+
+Docker container port <container name> : 현재 컨테이너가 사용하고 있는 port 정보 
+
+Docker container rename <container name> <as> : 컨테이너 이름을 as 로 변경 
+Docker container cp <container-name>:<path> <client-path>
+Docker container cp <client-file> <container-name>:<path> 
+	파일 복사 (컨테이너에 있는 파일을 내 컴퓨터로 or 내 컴퓨터에 있는 파일을 컨테이너로)
 
 
+Docker run -v <localpath>:<container-path> : 파일 공유할 때 
+	컨테이너에 파일을 쓰면, 공유된 path에도 생긴다.
+
+Docker ps -q : 실행중인 컨테이너 목록을 보여준다 
+Docker stop `docker ps -q` : 실행중인 컨테이너를 전부 멈춰라
+	`` : 안에 있는 문장을 실행시켜라 
+
+For i in `docker ps -q`; do echo $i; done : 실행중인 컨테이너 목록에서 하나씩 꺼내와서 출력해라
+For i in `docker ps -q`; do echo $i; docker stop $i; done : 실행중인 컨테이너 목록을 하나씩 꺼내와서 출력하고 정지시켜라 
+
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1004 --name mysql mysql
+	-e: 환경변수 설정 
