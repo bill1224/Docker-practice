@@ -1,5 +1,7 @@
 this file is created by Linux and Docker
 
 using git config credential.helper store 
--> auto git auth 
+-> auto git auth
+
++ check git env 
  
