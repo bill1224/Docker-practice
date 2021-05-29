@@ -1,1 +1,1 @@
-test
+ubuntu에서 git사용하기ll
