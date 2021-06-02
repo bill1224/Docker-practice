@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $# -eq 0 ]; then
-    echo "please, Input the filename"
+if [ $# -ne 2 ]; then
+    echo "please, Input 2 filename"
     echo "./s7.sh <filename1> <filename2>"
     exit 0
 fi

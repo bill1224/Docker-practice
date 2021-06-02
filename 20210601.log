@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "b.txt파일의 내용"
-
-echo "a.txt파일의 내용"
