@@ -1,1 +1,6 @@
-ubuntu에서 git사용하기ll
+#!/bin/bash
+
+cd /home/dooo
+FileName="NewFile.txt"
+touch $FileName
+
