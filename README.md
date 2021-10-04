@@ -21,6 +21,12 @@ docker container ps -q (= docker ps -q)
 ```
 현재 실행중인 컨테이너의 ID값 목록 보기
 
+``` 
+docker ps (-a) --format '{{.<컬럼명>}}'
+```
+container의 목록을 확인할 때, 보고 싶은 컬럼만 검색하고 싶은 경우에 사용한다. <br>
+예를들어, 컬럼명에 Names를 입력하면 container의 이름만 보여줍니다.
+
 #### 2. container 실행/정지 관련 
 ```
 docker container run <추가명령어> --name <컨테이너 이름> <이미지 이름> <실행할 명령어>
